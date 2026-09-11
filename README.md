@@ -1,38 +1,38 @@
 # Microturbine Control Panel
 
-Applicazione MATLAB interattiva che simula il **pannello di controllo di una
-microturbina a gas cogenerativa (CHP) da ~80 kW**. Dietro l'interfaccia (MATLAB
-App Designer) gira un modello termodinamico dinamico in Simulink del ciclo Brayton
-rigenerativo a singolo albero, con recupero di calore per produzione di acqua calda.
+Interactive MATLAB application that simulates the **control panel of a ~80 kW
+cogeneration (CHP) gas microturbine**. Behind the interface (MATLAB App Designer)
+runs a dynamic Simulink model of the single-shaft recuperated Brayton cycle, with
+heat recovery for domestic hot water.
 
-> **Nota.** Il modello non riproduce una macchina reale specifica: è un progetto
-> didattico/di esercizio. Con dati accurati di un costruttore potrebbe essere
-> calibrato verso un *digital twin* di una microturbina esistente.
+> **Note.** The model does not reproduce a specific real machine: it is a
+> learning/practice project. With accurate manufacturer data it could be
+> calibrated towards a *digital twin* of an existing microturbine.
 
-🔗 **Descrizione completa e approfondimento del modello:**
+🔗 **Full description and model deep-dive:**
 https://alessandroguenna.github.io/projects/microturbine/
 
-## Contenuto
+## Contents
 
-| File / cartella | Descrizione |
+| File / folder | Description |
 |---|---|
-| `ControlPanel.mlapp` | Interfaccia dell'app (App Designer) |
-| `microturbine_model_v2.slx` | Modello dinamico Simulink del ciclo |
-| `data_v2.m` | Inizializzazione: parametri, punto di progetto, schedule di velocità |
-| `MATLAB functions/` | Funzioni di supporto (mappe compressore, punto di progetto, recuperatore, controllo…) |
-| `Allegati/` | Dati della mappa del compressore e risorse del modello |
+| `ControlPanel.mlapp` | The app interface (App Designer) |
+| `microturbine_model_v2.slx` | Dynamic Simulink model of the cycle |
+| `data_v2.m` | Initialisation: parameters, design point, speed schedule |
+| `MATLAB functions/` | Support functions (compressor maps, design point, recuperator, control…) |
+| `Allegati/` | Compressor-map data and model resources |
 
-## Come eseguirla
+## How to run it
 
-1. Aprire il progetto in **MATLAB** (con **Simulink** e **Simscape**).
-2. Aprire `ControlPanel.mlapp` e premere **Run**.
-3. Nell'app: impostare la temperatura ambiente → **Initialize** → **START**,
-   poi variare il carico con lo slider *Set load*.
+1. Open the project in **MATLAB** (with **Simulink** and **Simscape**).
+2. Open `ControlPanel.mlapp` and press **Run**.
+3. In the app: set the ambient temperature → **Initialize** → **START**,
+   then vary the load with the *Set load* slider.
 
-## Modello
+## Model
 
-Ciclo Brayton rigenerativo a singolo albero: compressore (mappa) → recuperatore →
-camera di combustione → turbina (in choking) → recuperatore → caldaia a recupero (HRB).
-Il controllo insegue la potenza richiesta con uno **schedule di velocità ottimale**
-(massimo rendimento) e protezioni (margine al pompaggio, temperatura massima turbina,
-load shedding proporzionale).
+Single-shaft recuperated Brayton cycle: compressor (map) → recuperator →
+combustion chamber → turbine (choked) → recuperator → heat-recovery boiler (HRB).
+The controller tracks the requested power with an **optimal-speed schedule**
+(maximum efficiency) and protections (surge margin, maximum turbine temperature,
+proportional load shedding).
