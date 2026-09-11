@@ -22,12 +22,6 @@ https://alessandroguenna.github.io/projects/microturbine/
 | `MATLAB functions/` | Support functions (compressor maps, design point, recuperator, control…) |
 | `Allegati/` | Compressor-map data and model resources |
 
-## How to run it
-
-1. Open the project in **MATLAB** (with **Simulink** and **Simscape**).
-2. Open `ControlPanel.mlapp` and press **Run**.
-3. In the app: set the ambient temperature → **Initialize** → **START**,
-   then vary the load with the *Set load* slider.
 
 ## Model
 
