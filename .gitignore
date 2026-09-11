@@ -1,0 +1,17 @@
+# MATLAB / Simulink file temporanei e generati
+*.asv
+*.m~
+*.slx.autosave
+*.slxc
+*.mex*
+slprj/
+codegen/
+*.slxc
+
+# Report di autosave e cache
+*.autosave
+*.bak
+
+# File di sistema
+Thumbs.db
+.DS_Store
